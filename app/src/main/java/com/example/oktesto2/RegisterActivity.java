@@ -34,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     ProgressBar progressBar;
 
-
+//test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
