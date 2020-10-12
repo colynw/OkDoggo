@@ -24,21 +24,21 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLoginBtn ,mSignup;
-
-
     FirebaseAuth fAuth;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        mEmail = findViewById(R.id.Email);
-        mPassword = findViewById(R.id.password);
         fAuth = FirebaseAuth.getInstance();
+        mEmail = findViewById(R.id.Email);
+        mPassword = findViewById(R.id.Password);
         mLoginBtn = findViewById(R.id.Login);
         mSignup = findViewById(R.id.Signup);
+
 
 
 
@@ -47,19 +47,19 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String email = mEmail.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
+                String Password = mPassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is Required.");
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)){
+                if(TextUtils.isEmpty(Password)){
                     mPassword.setError("Password is Required.");
                     return;
                 }
 
-                if(password.length() < 6){
+                if(Password.length() < 6){
                     mPassword.setError("Password Must be >= 6 Characters");
                     return;
                 }
@@ -68,12 +68,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 // authenticate the user
 
-                fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.signInWithEmailAndPassword(email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            Intent _Login = new Intent(LoginActivity.this,MainActivity.class);
+                            startActivity(_Login);
                         }else {
                             Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
