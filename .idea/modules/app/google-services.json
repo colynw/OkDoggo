@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "356625997905",
+    "firebase_url": "https://okdoggo-cfb51.firebaseio.com",
+    "project_id": "okdoggo-cfb51",
+    "storage_bucket": "okdoggo-cfb51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356625997905:android:adb6236304572844dbd870",
+        "android_client_info": {
+          "package_name": "com.example.oktesto2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356625997905-5cj78nm4e50r3obss6goro1g80sh4e3u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.oktesto2",
+            "certificate_hash": "aa4f7c2dc70c9be6f8087a7e81c152625c72c551"
+          }
+        },
+        {
+          "client_id": "356625997905-ibpkqsra8ttopaikm8h6egnab7dmksbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH7-mLAUH8AE9DJyFpO6zAwjz8b68Aixg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356625997905-ibpkqsra8ttopaikm8h6egnab7dmksbt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
