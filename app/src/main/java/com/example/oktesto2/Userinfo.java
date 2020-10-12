@@ -20,7 +20,7 @@ public class Userinfo {
     String Getpass(){
         return password;
     }
-//test
+
 
 
 
