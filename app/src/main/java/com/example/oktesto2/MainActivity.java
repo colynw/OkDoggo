@@ -15,10 +15,6 @@ Button Logout;
         setContentView(R.layout.activity_main);
 
 
-
-
-
-
         Logout = findViewById(R.id.Logout);
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
