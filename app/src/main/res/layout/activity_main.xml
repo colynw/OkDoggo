@@ -9,6 +9,7 @@
 
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -16,14 +17,14 @@
         android:background="@color/colorPrimary">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/pic"
             android:layout_width="391dp"
             android:layout_height="280dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            app:srcCompat="@drawable/dog1" />
-    </RelativeLayout>
+            android:src="@drawable/paw2"/>
 
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -31,66 +32,61 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+    <TextView
+        android:id="@+id/Dog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:gravity="center"
+        android:text="Brad"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Pet Name"
-            android:id="@+id/full_name_profile"
+    <TextView
+        android:id="@+id/Breed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:gravity="center"
+        android:text="Pit_Bull"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:gravity="center"
+        android:text="@string/_12"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:gravity="center"
+        android:text="Male"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Next_Pet"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:text="Next Pet"
+            android:gravity="center"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-
-
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text = "Boone"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Breed"
-            android:id="@+id/breed_name_profile"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
+    </LinearLayout>
 
 
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text = "Pit Bull Terrier"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Age"
-            android:id="@+id/age_name_profile"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-
-
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text = "3"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Sex"
-            android:id="@+id/sex_name_profile"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-
-
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text = "Male"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/Logout"
@@ -103,9 +99,9 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        </LinearLayout>
-
 
 </LinearLayout>
+
+
 
 
