@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    TextView PET_NAME, BREED, AGE, SEX;
+
+    EditText PET_NAME,BREED,AGE, SEX;
 
 
 
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         BREED=findViewById(R.id.Breed);
         AGE=findViewById(R.id.Age);
         SEX=findViewById(R.id.Sex);
+
 
 
         int[] images = {R.drawable.dog1,R.drawable.bella,R.drawable.weds,R.drawable.molly,R.drawable.april,R.drawable.cheeto};
