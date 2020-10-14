@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:padding="20dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:padding="20dp">
 
         <ImageView
             android:id="@+id/pic"
@@ -22,34 +21,30 @@
             android:layout_height="280dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/paw2"/>
+            android:src="@drawable/paw2" />
 
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
-
-
-
-
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Pet Name">
+
             <EditText
                 android:id="@+id/Dog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Brad"
                 android:focusable="false"
+                android:text="Brad"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -57,63 +52,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Breed">
+
             <EditText
                 android:id="@+id/Breed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Brad"
                 android:focusable="false"
+                android:text="Brad"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Age">
+
             <EditText
                 android:id="@+id/Age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Brad"
                 android:focusable="false"
+                android:text="Brad"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Sex">
+
             <EditText
                 android:id="@+id/Sex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Brad"
                 android:focusable="false"
+                android:text="Brad"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/Next_Pet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Next Pet"
-            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
 
         <Button
             android:id="@+id/Logout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="LOGOUT"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="LOGOUT" />
+
+
+
 
     </LinearLayout>
 

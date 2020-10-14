@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     EditText PET_NAME,BREED,AGE, SEX;
+    float x1,x2,y1,y2;
 
 
 
@@ -112,17 +114,32 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Next_Pet = findViewById(R.id.Next_Pet);
-        Next_Pet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                finish();
 
-            }
-        });
+
+
+
     }
 
-
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {  //swipe event
+        switch(event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = event.getX();
+                y1 = event.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = event.getX();
+                y2 = event.getY();
+                if(x1 <  x2){  //swipe left
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(i);
+            }else if(x1 > x2){  //swipe right
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+            break;
+        }
+        return false;
+    }
 }
