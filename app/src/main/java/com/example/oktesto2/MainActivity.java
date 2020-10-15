@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    Button Logout,Next_Pet;
+    Button Logout;
 
 
     @Override
@@ -62,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
         SEX=findViewById(R.id.Sex);
 
 
-
-        int[] images = {R.drawable.dog1,R.drawable.bella,R.drawable.weds,R.drawable.molly,R.drawable.april,R.drawable.cheeto};
-        Random rand = new Random();
-        int score = rand.nextInt((6-1)+1)+1;
+        //6 sets of pet data is currently in the database need to add the picture to the drawable.
+        int[] images = {R.drawable.dog1,R.drawable.bella,R.drawable.weds,R.drawable.molly,R.drawable.april,R.drawable.cheeto};  //Pictures currently not in the database. was having a huge issue with them
+        Random rand = new Random(); // setting up random so it shows a random pet every time someone swipes. currently some pets repeat but once we have enough pets it wont be a issue
+        int score = rand.nextInt((6-1)+1)+1;   // gets a random number 
         String Database = String.valueOf(score);
 
 
@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
 
+
+
+                //pulling this info from the database
                 PET_NAME.setText(value.getString("Name"));
                 BREED.setText(value.getString("Breed"));
                 AGE.setText(value.getString("Age"));
@@ -93,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//set resource for imageview
 
+    //sets the picture based on what document is getting pulled from the database
         mImageView.setImageResource(images[score-1]);
 
 
@@ -134,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 if(x1 <  x2){  //swipe left
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(i);
-            }else if(x1 > x2){  //swipe right
+            }else if(x1 > x2){  //swipe right. should push the current pet data into the data base so we can just pull it when we have everything set up
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(i);
             }

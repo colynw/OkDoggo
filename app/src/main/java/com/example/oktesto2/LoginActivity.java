@@ -50,12 +50,12 @@ public class LoginActivity extends AppCompatActivity {
                 String Password = mPassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
-                    mEmail.setError("Email is Required.");
+                    mEmail.setError("Email is Required.");   //just basic error checking
                     return;
                 }
 
                 if(TextUtils.isEmpty(Password)){
-                    mPassword.setError("Password is Required.");
+                    mPassword.setError("Password is Required.");  //basic error checking
                     return;
                 }
 
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 fAuth.signInWithEmailAndPassword(email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task<AuthResult> task) {  //uses the firebase to login the users
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
                             Intent _Login = new Intent(LoginActivity.this,MainActivity.class);
@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mSignup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //takes them to the signup page
                 Intent _Signup = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(_Signup);
             }
