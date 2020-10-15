@@ -27,12 +27,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    public static final String TAG = "TAG";
     EditText mFullName,mEmail,mPassword,mPhone;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
-    ProgressBar progressBar;
+    ProgressBar progressBar;   // going to add this at some point because the loading takes forever
 
 //test
 
@@ -49,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
         mRegisterBtn= findViewById(R.id.Signup);
 
 
-        fAuth = FirebaseAuth.getInstance();
+        fAuth = FirebaseAuth.getInstance();  // gets the firebase instance
 
 
 
@@ -62,12 +61,12 @@ public class RegisterActivity extends AppCompatActivity {
                 final String fullName = mFullName.getText().toString();
                 final String phone    = mPhone.getText().toString();
 
-                if(TextUtils.isEmpty(email)){
+                if(TextUtils.isEmpty(email)){    //basic error checking
                     mEmail.setError("Email is Required.");
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)){
+                if(TextUtils.isEmpty(password)){  //makes sure they enter a password
                     mPassword.setError("Password is Required.");
                     return;
                 }
@@ -83,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task<AuthResult> task) {  //stores the password and email in the database, currently not storing any other data
                         if(task.isSuccessful()){
                             Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
 
