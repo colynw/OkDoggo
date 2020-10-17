@@ -6,10 +6,30 @@
     android:layout_height="match_parent"
     android:background="#FED8B1"
     android:orientation="vertical"
-    android:paddingLeft="50dp"
-    android:paddingTop="100dp"
-    android:paddingRight="50dp"
+
     tools:context=".RegisterActivity">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="47dp"
+            android:src="@drawable/logo" />
+
+    </RelativeLayout>
+
 
     <TextView
         android:id="@+id/textView"
@@ -17,8 +37,10 @@
         android:layout_height="wrap_content"
         android:background="#c0efd8"
         android:gravity="center"
-        android:text= "SIGNING UP FOR OKDOGGO"
-        android:textColor="@android:color/white"
+        android:text="SIGNING UP FOR OKDOGGO"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -71,14 +93,14 @@
         android:inputType="textPersonName" />
 
 
-
     <Button
         android:id="@+id/Signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#c0efd8"
         android:text="Sign up"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
 
 
