@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
     int score = rand.nextInt((6-1)+1)+1;   // gets a random number
     String Database = String.valueOf(score);
 
-
+    FirebaseAuth fAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference DR = db.collection("Dog").document(Database);
 
     EditText PET_NAME,BREED,AGE, SEX;  
     float x1,x2,y1,y2;
 
-    String N,B,A,S;
+    String N,B,A,S,USER;
 
 
 
@@ -65,10 +65,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fAuth = FirebaseAuth.getInstance();
         PET_NAME=findViewById(R.id.Dog);
         BREED=findViewById(R.id.Breed);
         AGE=findViewById(R.id.Age);
         SEX=findViewById(R.id.Sex);
+
+        USER = fAuth.getCurrentUser().getEmail().toString();
 
 
 
@@ -148,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                     docData.put("Breed", B);
                     docData.put("Age", A);
                     docData.put("Sex", S);
-                    db.collection("Dog2").document(Database).set(docData);
+                    db.collection(USER).document(Database).set(docData);
                     Toast.makeText(MainActivity.this, "Pet added to favorites", Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(MainActivity.this, MainActivity.class);

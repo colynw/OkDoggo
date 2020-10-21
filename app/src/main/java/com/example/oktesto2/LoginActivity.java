@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {  //uses the firebase to login the users
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent _Login = new Intent(LoginActivity.this,MainActivity.class);
+                            Intent _Login = new Intent(LoginActivity.this,WelcomeActivity.class);
                             startActivity(_Login);
                         }else {
                             Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
