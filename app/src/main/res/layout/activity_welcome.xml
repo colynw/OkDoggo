@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FED8B1"
+    android:orientation="vertical"
+    tools:context=".WelcomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="47dp"
+            android:src="@drawable/logo" />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/ViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:text="View Pet Profiles"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/Favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:text="View Favorite Pets"
+        android:textColor="@android:color/black"/>
+
+
+
+
+</LinearLayout>
