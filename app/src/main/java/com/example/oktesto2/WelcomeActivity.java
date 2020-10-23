@@ -21,7 +21,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         viewpages.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { //takes them to the signup page
+            public void onClick(View v) {
                 Intent _Welcome = new Intent(WelcomeActivity.this,MainActivity.class);
                 startActivity(_Welcome);
             }
@@ -30,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         favorites.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { //takes them to the signup page
+            public void onClick(View v) {
                 Intent _fav = new Intent(WelcomeActivity.this,FavoriteActivity.class);
                 startActivity(_fav);
             }
