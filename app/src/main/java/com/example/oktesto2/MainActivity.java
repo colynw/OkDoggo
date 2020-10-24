@@ -39,7 +39,7 @@ import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
-//TEST Test
+//TEST Test test
     //6 sets of pet data is currently in the database so as we add more we we need to add the picture to the drawable.
     int[] images = {R.drawable.dog1,R.drawable.bella1,R.drawable.weds,R.drawable.molly,R.drawable.april,R.drawable.cheeto};  //Pictures currently not in the database. was having a huge issue with them
     Random rand = new Random(); // setting up random so it shows a random pet every time someone swipes. currently some pets repeat but once we have enough pets it wont be a issue
