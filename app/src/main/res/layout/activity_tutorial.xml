@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:id="@+id/video"
+    android:layout_height="fill_parent"
+    android:paddingLeft="2px"
+    android:paddingRight="2px"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="2px"
+    android:paddingBottom="2px"
+    android:layout_width="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="#c0efd8"
+        android:gravity="center"
+        android:text="How to use and navigate"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <VideoView
+        android:id="@+id/VideoView"
+        android:layout_width="fill_parent"
+        android:layout_height="594dp" />
+
+    <Button
+        android:id="@+id/FinishSignup"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        android:background="#c0efd8"
+        android:text="Finish"
+        android:textColor="@android:color/white" />
+</LinearLayout>
+
+
+
+
