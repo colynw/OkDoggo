@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingLeft="50dp"
+    android:paddingTop="100dp"
+    android:paddingRight="50dp"
+    tools:context=".ReportActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:gravity="center"
+        android:text="Reason For Report"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ReportText"
+        android:layout_width="312dp"
+        android:layout_height="408dp"
+        android:background="@android:color/white"
+
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Type Comment..."
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:text="Submit"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:text="Cancel"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
