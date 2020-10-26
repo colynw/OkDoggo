@@ -10,16 +10,14 @@
     tools:context=".RegisterActivity">
 
 
-
-
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="397dp"
+        android:layout_height="236dp"
 
         android:padding="20dp">
 
         <ImageView
-            android:id="@+id/pic"
+            android:id="@+id/img_profile_pic"
             android:layout_width="280dp"
             android:layout_height="280dp"
             android:layout_alignParentTop="true"
@@ -29,7 +27,6 @@
             android:src="@drawable/logo" />
 
     </RelativeLayout>
-
 
     <TextView
         android:id="@+id/textView"
