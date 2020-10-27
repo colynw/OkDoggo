@@ -42,26 +42,6 @@ public class ProfileTab1 extends Fragment {
     }
 
 
-    public static com.example.oktesto2.ProfileTab1 newInstance(String param1, String param2, String param3, String param4, String param5) {
-        com.example.oktesto2.ProfileTab1 fragment = new com.example.oktesto2.ProfileTab1();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        args.putString(ARG_PARAM3, param3);
-        args.putString(ARG_PARAM4, param4);
-        args.putString(ARG_PARAM5, param5);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,7 +63,7 @@ public class ProfileTab1 extends Fragment {
             mParam5 = getArguments().getString(ARG_PARAM5);
         }
 
-        Name.setText(mParam1);//("This is the only place you can set text without crashing."); //Name.setText(mParam1);
+        Name.setText(mParam1);
         Breed.setText(mParam2);
         Sex.setText(mParam3);
         Age.setText(mParam4);

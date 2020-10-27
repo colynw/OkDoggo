@@ -11,6 +11,8 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -53,16 +55,31 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference DR = db.collection("Dog").document(Database);
 
-    // Misc
+    // Miscellaneous
     ImageView Settings, Report;
-    String Name, Breed, Sex, Age, Description, Personality;
-    String HistoryMedical, HistoryBehavior, HistoryHome;
     float x1,x2,y1,y2;
+    TextView pName, pBreed, pSex, pAge, pDescription, pPersonality,
+            pHistoryMedical,pHistoryBehavior,pHistoryHome,
+            Change;
+    String Name, Breed, Sex, Age, Description, Personality,
+            HistoryMedical, HistoryBehavior, HistoryHome;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        pName = findViewById(R.id.placeholder_name);
+        pBreed = findViewById(R.id.placeholder_breed);
+        pSex = findViewById(R.id.placeholder_sex);
+        pAge = findViewById(R.id.placeholder_age);
+        pDescription = findViewById(R.id.placeholder_description);
+        pPersonality = findViewById(R.id.placeholder_personality_traits);
+        pHistoryMedical = findViewById(R.id.placeholder_history_medical);
+        pHistoryBehavior = findViewById(R.id.placeholder_history_behavior);
+        pHistoryHome = findViewById(R.id.placeholder_history_home);
+        Change = findViewById(R.id.placeholder_change);
 
         // -----------------------------------------------------------------------------------------
         // Setting the profile image
@@ -75,47 +92,69 @@ public class MainActivity extends AppCompatActivity {
         // -----------------------------------------------------------------------------------------
         // Pulling Information from the Database
         // -----------------------------------------------------------------------------------------
-        fAuth = FirebaseAuth.getInstance();
+        // This is honest to god the worst work around I've ever done for anything ever.
+        // Shield your eyes and don't even think about trying to figure out how it works.
 
+        fAuth = FirebaseAuth.getInstance();
         DR.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 //pulling this info from the database
-                Name = value.getString("Name");
-                Breed = value.getString("Breed");
-                Sex = value.getString("Sex");
-                Age = value.getString("Age");
+                pName.setText(value.getString("Name"));
+                pBreed.setText(value.getString("Breed"));
+                pSex.setText(value.getString("Sex"));
+                pAge.setText(value.getString("Age"));
+                pDescription.setText(value.getString("Description"));
+                pPersonality.setText(value.getString("Personality"));
+                pHistoryMedical.setText(value.getString("Medical"));
+                pHistoryBehavior.setText(value.getString("Behavior"));
+                pHistoryHome.setText(value.getString("Home"));
+                Change.setText("Changed");
             }
         });//end DR addSnapshotListener
 
-        // The addSnapshotListener will always complete after the bundles are made
-        // That's a problem because I'm sending the information to the fragments via bundles
-        // And we don't have the luxury of waiting, so it will display as null.
+        // Don't ask. It takes serious skill to come up with this bad of a work around.
+        Change.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {}
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length() != 0) {
+                    Name = pName.getText().toString();
+                    Breed = pBreed.getText().toString();
+                    Sex = pSex.getText().toString();
+                    Age = pAge.getText().toString();
+                    Description = pDescription.getText().toString();
+                    Personality = pPersonality.getText().toString();
+                    HistoryMedical = pHistoryMedical.getText().toString();
+                    HistoryBehavior = pHistoryBehavior.getText().toString();
+                    HistoryHome = pHistoryHome.getText().toString();
 
-        // Everything bundled here goes into the General Tab
-        Bundle pet_general = new Bundle();
-        pet_general.putString("name", "Kobe"); //Name
-        pet_general.putString("breed", Breed);
-        pet_general.putString("sex", Sex);
-        pet_general.putString("age", Age);
-        pet_general.putString("description", Description);
+                    // Everything bundled here goes into the General Tab
+                    Bundle pet_general = new Bundle();
+                    pet_general.putString("name", Name); //Name
+                    pet_general.putString("breed", Breed);
+                    pet_general.putString("sex", Sex);
+                    pet_general.putString("age", Age);
+                    pet_general.putString("description", Description);
+                    //Todo: Add personality
 
-        // Everything bundled here goes into the Notes Tab
-        Bundle pet_notes = new Bundle();
-        pet_notes.putString("history_medical", "This dog has rabies and is special needs."); //HistoryMedical
-        pet_notes.putString("history_behavior", HistoryBehavior);
-        pet_notes.putString("history_home", HistoryHome);
+                    // Everything bundled here goes into the Notes Tab
+                    Bundle pet_notes = new Bundle();
+                    pet_notes.putString("history_medical", HistoryMedical); //HistoryMedical
+                    pet_notes.putString("history_behavior", HistoryBehavior);
+                    pet_notes.putString("history_home", HistoryHome);
 
-        // -----------------------------------------------------------------------------------------
-        // Makes profile tabs work, sends database information to tabs in a bundle
-        // -----------------------------------------------------------------------------------------
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager(), pet_general, pet_notes);
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-
-        //  USER = fAuth.getCurrentUser().getEmail().toString();
+                    SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(MainActivity.this, getSupportFragmentManager(), pet_general, pet_notes);
+                    ViewPager viewPager = findViewById(R.id.view_pager);
+                    viewPager.setAdapter(sectionsPagerAdapter);
+                    TabLayout tabs = findViewById(R.id.tabs);
+                    tabs.setupWithViewPager(viewPager);
+                }
+            }
+        });
 
         //------------------------------------------------------------------------------------------
         // Clickable On-screen Options
@@ -135,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(activityChangeIntent);
             }
         });
+
+
     }// end void onCreate
 
 // Swipe can be re-enabled after we get button to hide tabs
@@ -169,4 +210,7 @@ public class MainActivity extends AppCompatActivity {
 //        }//end switch
 //        return false;
 //    }// end bool onTouchEvent
+
+
+
 }//end MainActivity
