@@ -1,0 +1,109 @@
+Index: app/src/main/res/layout/activity_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:paddingLeft=\"50dp\"\r\n    android:paddingTop=\"100dp\"\r\n    android:paddingRight=\"50dp\"\r\n    tools:context=\".SettingsActivity\">\r\n\r\n\r\n    <TextView\r\n        android:id=\"@+id/banner_settings\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"#c0efd8\"\r\n        android:gravity=\"center\"\r\n        android:textColor=\"@android:color/white\"\r\n        android:textSize=\"36sp\"\r\n        android:textStyle=\"bold\"\r\n        tools:text=\"SETTINGS\" />\r\n\r\n    <!--Adds space-->\r\n    <View\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"20dp\"/>\r\n\r\n    <TableRow\r\n        android:id=\"@+id/tableRow1\"\r\n        android:layout_width=\"313dp\"\r\n        android:layout_height=\"37dp\"\r\n        android:layout_marginTop=\"15dp\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/lbl_saved_profiles\"\r\n            android:layout_width=\"135dp\"\r\n            android:layout_height=\"22dp\"\r\n            android:orientation=\"horizontal\"\r\n            android:text=\"Saved Profiles\" />\r\n\r\n        <!--Adds space-->\r\n        <View\r\n            android:layout_width=\"100dp\"\r\n            android:layout_height=\"20dp\"/>\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_view_saved_profiles\"\r\n            android:layout_width=\"59dp\"\r\n            android:layout_height=\"match_parent\"\r\n            android:text=\"View\"\r\n            android:textSize=\"10sp\" />\r\n    </TableRow>\r\n\r\n    <TableRow\r\n        android:id=\"@+id/tableRow2\"\r\n        android:layout_width=\"313dp\"\r\n        android:layout_height=\"37dp\"\r\n        android:layout_marginTop=\"15dp\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/lbl_search_criteria\"\r\n            android:layout_width=\"135dp\"\r\n            android:layout_height=\"22dp\"\r\n            android:text=\"Edit Search Criteria\" />\r\n\r\n            <!--Adds space-->\r\n        <View\r\n            android:layout_width=\"100dp\"\r\n            android:layout_height=\"20dp\"/>\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_view_search_criteria\"\r\n            android:layout_width=\"59dp\"\r\n            android:layout_height=\"match_parent\"\r\n            android:text=\"View\"\r\n            android:textSize=\"10sp\" />\r\n    </TableRow>\r\n\r\n    <TableRow\r\n        android:id=\"@+id/tableRow3\"\r\n        android:layout_width=\"313dp\"\r\n        android:layout_height=\"37dp\"\r\n        android:layout_marginTop=\"15dp\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/lbl_user_info\"\r\n            android:layout_width=\"135dp\"\r\n            android:layout_height=\"22dp\"\r\n            android:text=\"Edit User Info\" />\r\n\r\n        <!--Adds space-->\r\n        <View\r\n            android:layout_width=\"100dp\"\r\n            android:layout_height=\"20dp\"/>\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_view_user_info\"\r\n            android:layout_width=\"59dp\"\r\n            android:layout_height=\"match_parent\"\r\n            android:text=\"View\"\r\n            android:textSize=\"10sp\" />\r\n    </TableRow>\r\n\r\n    <View\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"20dp\"/>\r\n\r\n    <TextView\r\n        android:id=\"@+id/lbl_search_distance\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Search Distance\" />\r\n\r\n    <!--Adds space-->\r\n    <View\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"10dp\"/>\r\n\r\n    <SeekBar\r\n        android:id=\"@+id/seekBar_search_distance\"\r\n        android:layout_width=\"320dp\"\r\n        android:layout_height=\"wrap_content\" />\r\n\r\n    <!--Adds space-->\r\n    <View\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"20dp\"/>\r\n\r\n    <TableRow\r\n        android:id=\"@+id/tableRow4\"\r\n        android:layout_width=\"313dp\"\r\n        android:layout_height=\"37dp\"\r\n        android:layout_marginTop=\"15dp\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/lbl_user_type\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Change User Type\" />\r\n\r\n        <!--Adds space-->\r\n        <View\r\n            android:layout_width=\"100dp\"\r\n            android:layout_height=\"20dp\"/>\r\n\r\n        <Spinner\r\n            android:id=\"@+id/spinner_user_type\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\" />\r\n    </TableRow>\r\n\r\n    <View\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"40dp\"/>\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_logout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"LOG OUT\" />\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_settings.xml	(revision 2f07796faba035a156941203ca9d6ca20f471fbd)
++++ app/src/main/res/layout/activity_settings.xml	(date 1603923214415)
+@@ -17,7 +17,7 @@
+         android:layout_height="wrap_content"
+         android:background="#c0efd8"
+         android:gravity="center"
+-        android:textColor="@android:color/white"
++        android:textColor="@android:color/black"
+         android:textSize="36sp"
+         android:textStyle="bold"
+         tools:text="SETTINGS" />
+@@ -38,6 +38,7 @@
+             android:layout_width="135dp"
+             android:layout_height="22dp"
+             android:orientation="horizontal"
++            android:textColor="@android:color/black"
+             android:text="Saved Profiles" />
+ 
+         <!--Adds space-->
+@@ -63,6 +64,7 @@
+             android:id="@+id/lbl_search_criteria"
+             android:layout_width="135dp"
+             android:layout_height="22dp"
++            android:textColor="@android:color/black"
+             android:text="Edit Search Criteria" />
+ 
+             <!--Adds space-->
+@@ -88,6 +90,7 @@
+             android:id="@+id/lbl_user_info"
+             android:layout_width="135dp"
+             android:layout_height="22dp"
++            android:textColor="@android:color/black"
+             android:text="Edit User Info" />
+ 
+         <!--Adds space-->
+@@ -97,7 +100,7 @@
+ 
+         <Button
+             android:id="@+id/btn_view_user_info"
+-            android:layout_width="59dp"
++            android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:text="View"
+             android:textSize="10sp" />
+@@ -111,6 +114,7 @@
+         android:id="@+id/lbl_search_distance"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
++        android:textColor="@android:color/black"
+         android:text="Search Distance" />
+ 
+     <!--Adds space-->
+@@ -138,6 +142,7 @@
+             android:id="@+id/lbl_user_type"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
++            android:textColor="@android:color/black"
+             android:text="Change User Type" />
+ 
+         <!--Adds space-->
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.oktesto2\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"OkDoggo\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\">\r\n        <activity android:name=\".FavoriteActivity\" />\r\n        <activity android:name=\".WelcomeActivity\" />\r\n        <activity android:name=\".LoginActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity android:name=\".MainActivity\" />\r\n        <activity android:name=\".RegisterActivity\" />\r\n        <activity android:name=\".SettingsActivity\" />\r\n        <activity android:name=\".ReportActivity\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 2f07796faba035a156941203ca9d6ca20f471fbd)
++++ app/src/main/AndroidManifest.xml	(date 1603923409086)
+@@ -2,6 +2,12 @@
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     package="com.example.oktesto2">
+ 
++    <!--
++         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
++         Google Maps Android API v2, but you must specify either coarse or fine
++         location permissions for the "MyLocation" functionality.
++    -->
++    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+     <uses-permission android:name="android.permission.INTERNET" />
+ 
+     <application
+@@ -11,6 +17,19 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
++
++        <!--
++             The API key for Google Maps-based APIs is defined as a string resource.
++             (See the file "res/values/google_maps_api.xml").
++             Note that the API key is linked to the encryption key used to sign the APK.
++             You need a different API key for each encryption key, including the release key that is used to
++             sign the APK for publishing.
++             You can define the keys for the debug and release targets in src/debug/ and src/release/.
++        -->
++        <meta-data
++            android:name="com.google.android.geo.API_KEY"
++            android:value="AIzaSyBsW4nFNJgkJjg_fInfP5t0fvwrn9JL23k" />
++
+         <activity android:name=".FavoriteActivity" />
+         <activity android:name=".WelcomeActivity" />
+         <activity android:name=".LoginActivity">
