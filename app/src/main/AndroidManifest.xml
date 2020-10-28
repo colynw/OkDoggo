@@ -29,7 +29,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBsW4nFNJgkJjg_fInfP5t0fvwrn9JL23k" />
+            android:value="AIzaSyCcrr7fUvzXxcUx-qz2_OwAe6JShoT7k80" />
 
         <activity android:name=".UserTypeActivity"/>
         <activity android:name=".FavoriteActivity" />
