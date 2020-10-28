@@ -50,26 +50,36 @@ public class MainActivity extends AppCompatActivity {
     int score = rand.nextInt((6-1)+1)+1;   // gets a random number
     String Database = String.valueOf(score);
 
-    // Firebase stuff and things
+    // Firebase
     FirebaseAuth fAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference DR = db.collection("Dog").document(Database);
 
     // Miscellaneous
     ImageView Settings, Report;
-    float x1,x2,y1,y2;
+    ViewPager tabWindow;
+    TabLayout tabBar;
     TextView pName, pBreed, pSex, pAge, pDescription, pPersonality,
             pHistoryMedical,pHistoryBehavior,pHistoryHome,
             Change;
     String Name, Breed, Sex, Age, Description, Personality,
             HistoryMedical, HistoryBehavior, HistoryHome;
+    boolean showTabs = false;
+    float x1,x2,y1,y2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initializePlaceholders();
+        setProfileImage();
+        pullPetInfo();
+        enableTabView();
+        enableButtons();
+    }// end void onCreate
 
+    void initializePlaceholders(){
         pName = findViewById(R.id.placeholder_name);
         pBreed = findViewById(R.id.placeholder_breed);
         pSex = findViewById(R.id.placeholder_sex);
@@ -80,21 +90,58 @@ public class MainActivity extends AppCompatActivity {
         pHistoryBehavior = findViewById(R.id.placeholder_history_behavior);
         pHistoryHome = findViewById(R.id.placeholder_history_home);
         Change = findViewById(R.id.placeholder_change);
-
-        // -----------------------------------------------------------------------------------------
-        // Setting the profile image
-        // -----------------------------------------------------------------------------------------
+    }
+    void setProfileImage(){
         ImageView mImageView;
-        mImageView = (ImageView)findViewById(R.id.img_profile_pic);
+        mImageView = findViewById(R.id.img_profile_pic);
         //sets the picture based on what document is getting pulled from the database
         mImageView.setImageResource(images[score-1]);
+    }
+    void enableTabView(){
+        final Button toggleTabs = findViewById(R.id.btn_toggle_tabs);
+        toggleTabs.setText("View more");
+        tabWindow = findViewById(R.id.view_pager);
+        tabBar = findViewById(R.id.tabs);
 
-        // -----------------------------------------------------------------------------------------
-        // Pulling Information from the Database
-        // -----------------------------------------------------------------------------------------
+        toggleTabs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!showTabs) {
+                    tabWindow.setVisibility(View.VISIBLE);
+                    tabBar.setVisibility(View.VISIBLE);
+                    toggleTabs.setText("View less");
+                    showTabs = true;
+                } else
+                {
+                    tabWindow.setVisibility(View.INVISIBLE);
+                    tabBar.setVisibility(View.INVISIBLE);
+                    toggleTabs.setText("View more");
+                    showTabs = false;
+                }
+            }
+        });
+
+    }
+    void enableButtons(){
+        Settings = findViewById(R.id.settings);
+        Settings.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent activityChangeIntent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(activityChangeIntent);
+            }
+        });
+
+        Report = findViewById(R.id.report);
+        Report.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent activityChangeIntent = new Intent(MainActivity.this, ReportActivity.class);
+                startActivity(activityChangeIntent);
+            }
+        });
+    }
+    void pullPetInfo(){
         // This is honest to god the worst work around I've ever done for anything ever.
         // Shield your eyes and don't even think about trying to figure out how it works.
-
         fAuth = FirebaseAuth.getInstance();
         DR.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -155,62 +202,43 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
-        //------------------------------------------------------------------------------------------
-        // Clickable On-screen Options
-        //------------------------------------------------------------------------------------------
-        Settings = findViewById(R.id.settings);
-        Settings.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent activityChangeIntent = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(activityChangeIntent);
-            }
-        });
+    @Override
+    //----------------------------------------------------------------------------------------------
+    // Swipe Left/Right Event
+    //----------------------------------------------------------------------------------------------
+    public boolean onTouchEvent(MotionEvent event) {
+        if (!showTabs){
+            switch(event.getAction()){
+                case MotionEvent.ACTION_DOWN:
+                    x1 = event.getX();
+                    y1 = event.getY();
+                    break;
+                case MotionEvent.ACTION_UP:
+                    x2 = event.getX();
+                    y2 = event.getY();
+                    if(x1 <  x2){  //swipe left pet is saved
 
-        Report = findViewById(R.id.report);
-        Report.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent activityChangeIntent = new Intent(MainActivity.this, ReportActivity.class);
-                startActivity(activityChangeIntent);
-            }
-        });
+                        Map<String, Object> docData = new HashMap<>();
+                        docData.put("Name", Name);
+                        docData.put("Breed", Breed);
+                        docData.put("Age", Age);
+                        docData.put("Sex", Sex);
+                        db.collection("USER").document(Database).set(docData);
+                        Toast.makeText(MainActivity.this, "Pet added to favorites", Toast.LENGTH_SHORT).show();
 
+                        Intent i = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(i);
+                    } else if(x1 > x2){   //swipe right pet is not saved
+                        Intent i = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(i);
+                    }
+                    break;
+            }//end switch
+        }
 
-    }// end void onCreate
-
-// Swipe can be re-enabled after we get button to hide tabs
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {  //swipe event
-//        switch(event.getAction()){
-//            case MotionEvent.ACTION_DOWN:
-//                x1 = event.getX();
-//                y1 = event.getY();
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                x2 = event.getX();
-//                y2 = event.getY();
-//                if(x1 <  x2){  //swipe left pet is saved
-//
-//                    Map<String, Object> docData = new HashMap<>();
-//                    docData.put("Name", N);
-////                    docData.put("Breed", B);
-////                    docData.put("Age", A);
-////                    docData.put("Sex", S);
-//                    db.collection(USER).document(Database).set(docData);
-//                    Toast.makeText(MainActivity.this, "Pet added to favorites", Toast.LENGTH_SHORT).show();
-//
-//                Intent i = new Intent(MainActivity.this, MainActivity.class);
-//                startActivity(i);
-//            } else if(x1 > x2){   //swipe right pet is not saved
-//
-//                Intent i = new Intent(MainActivity.this, MainActivity.class);
-//                startActivity(i);
-//            }
-//            break;
-//        }//end switch
-//        return false;
-//    }// end bool onTouchEvent
-
-
+        return false;
+    }// end bool onTouchEvent
 
 }//end MainActivity

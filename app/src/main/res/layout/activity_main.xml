@@ -38,6 +38,7 @@
         android:id="@+id/view_pager"
         android:layout_width="320dp"
         android:layout_height="338dp"
+        android:visibility="invisible"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -50,6 +51,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="280dp"
         android:background="?attr/colorPrimary"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +106,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btn_show_tabs"
+        android:id="@+id/btn_toggle_tabs"
         android:layout_width="190dp"
         android:layout_height="48dp"
         android:text="Button"
@@ -136,70 +138,90 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_breed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_sex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_personality_traits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_history_medical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_history_behavior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_history_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/placeholder_change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#00FFFFFF"
-        android:textSize="1sp"/>
+        android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
