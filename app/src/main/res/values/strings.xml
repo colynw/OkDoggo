@@ -12,6 +12,7 @@
     <string name="tab_text_1">General</string>
     <string name="tab_text_2">Notes</string>
     <string name="tab_text_3">Map</string>
+
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
@@ -29,6 +30,5 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="PETS" />
-
-
+    <string name="title_activity_maps">Map</string>
 </resources>
