@@ -1,14 +1,17 @@
 package com.example.oktesto2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+import android.app.Activity;
 import android.content.Intent;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.text.Editable;
@@ -56,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
     DocumentReference DR = db.collection("Dog").document(Database);
 
     // Miscellaneous
+    ConstraintLayout constraintLayout;
     ImageView Settings, Report, Pass, Save;
+    ImageView tabWindowOutline;
     ViewPager tabWindow;
     TabLayout tabBar;
     TextView pName, pBreed, pSex, pAge, pDescription, pPersonality,
@@ -90,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         pHistoryBehavior = findViewById(R.id.placeholder_history_behavior);
         pHistoryHome = findViewById(R.id.placeholder_history_home);
         Change = findViewById(R.id.placeholder_change);
+        constraintLayout = findViewById(R.id.coordinatorLayout6);
     }
     void setProfileImage(){
         ImageView mImageView;
@@ -102,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         toggleTabs.setText("View more");
         tabWindow = findViewById(R.id.view_pager);
         tabBar = findViewById(R.id.tabs);
+        tabWindowOutline = findViewById(R.id.outline_tab_window);
 
         toggleTabs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!showTabs) {
                     tabWindow.setVisibility(View.VISIBLE);
                     tabBar.setVisibility(View.VISIBLE);
+                    tabWindowOutline.setVisibility(View.VISIBLE);
                     Pass.setVisibility(View.INVISIBLE);
                     Save.setVisibility(View.INVISIBLE);
                     toggleTabs.setText("View less");
@@ -117,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     tabWindow.setVisibility(View.INVISIBLE);
                     tabBar.setVisibility(View.INVISIBLE);
+                    tabWindowOutline.setVisibility(View.INVISIBLE);
                     Pass.setVisibility(View.VISIBLE);
                     Save.setVisibility(View.VISIBLE);
                     toggleTabs.setText("View more");
@@ -132,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent activityChangeIntent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(activityChangeIntent);
+                finish();
             }
         });
 
@@ -140,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent activityChangeIntent = new Intent(MainActivity.this, ReportActivity.class);
                 startActivity(activityChangeIntent);
+                finish();
             }
         });
 
@@ -160,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
     void onLeftSwipe(){
         Intent i = new Intent(MainActivity.this, MainActivity.class);
         startActivity(i);
+        finish();
     }
     void onRightSwipe(){
         Map<String, Object> docData = new HashMap<>();
@@ -172,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(MainActivity.this, MainActivity.class);
         startActivity(i);
+        finish();
     }
 
     void pullPetInfo(){
@@ -234,9 +247,17 @@ public class MainActivity extends AppCompatActivity {
                     viewPager.setAdapter(sectionsPagerAdapter);
                     TabLayout tabs = findViewById(R.id.tabs);
                     tabs.setupWithViewPager(viewPager);
+
+                    if (Sex.equalsIgnoreCase("Female")){
+                        constraintLayout.setBackgroundResource(R.drawable.background_profile_female);
+                    }
+                    else{
+                    constraintLayout.setBackgroundResource(R.drawable.background_profile_male);
+                    }
                 }
             }
         });
+
     }
 
     @Override

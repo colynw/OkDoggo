@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,9 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.Password);
         mLoginBtn = findViewById(R.id.Login);
         mSignup = findViewById(R.id.Signup);
-
-
-
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
         mSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //takes them to the signup page
-                Intent _Signup = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent _Signup = new Intent(LoginActivity.this,UserTypeActivity.class);
                 startActivity(_Signup);
             }
         });

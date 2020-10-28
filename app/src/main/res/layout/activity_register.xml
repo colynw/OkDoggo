@@ -1,104 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FED8B1"
-    android:orientation="vertical"
 
+    android:background="#152238"
     tools:context=".RegisterActivity">
 
-
-    <RelativeLayout
-        android:layout_width="397dp"
-        android:layout_height="236dp"
-
-        android:padding="20dp">
-
-        <ImageView
-            android:id="@+id/img_profile_pic"
-            android:layout_width="280dp"
-            android:layout_height="280dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="41dp"
-            android:layout_marginEnd="47dp"
-            android:src="@drawable/logo" />
-
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#c0efd8"
-        android:gravity="center"
-        android:text="SIGNING UP FOR OKDOGGO"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/widow_signup"
+        android:layout_width="415dp"
+        android:layout_height="449dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/window" />
 
     <EditText
         android:id="@+id/Email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="203dp"
+        android:layout_marginBottom="488dp"
         android:autofillHints=""
+        android:background="#F0F0F0"
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/Username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="435dp"
         android:autofillHints=""
+        android:background="#F0F0F0"
         android:ems="10"
         android:hint="Full Name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="309dp"
+        android:layout_marginBottom="382dp"
         android:autofillHints=""
+        android:background="#F0F0F0"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/Age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="363dp"
+        android:layout_marginBottom="328dp"
         android:autofillHints=""
+        android:background="#F0F0F0"
         android:ems="10"
         android:hint="Age"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="414dp"
+        android:layout_marginBottom="277dp"
         android:autofillHints=""
+        android:background="#F0F0F0"
         android:ems="10"
         android:hint="Phone Number"
-        android:inputType="textPersonName" />
-
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Signup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#c0efd8"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="466dp"
+        android:layout_marginBottom="225dp"
+        android:background="#5BDCD2"
         android:text="Sign up"
-        android:textColor="@android:color/black"
-        android:textStyle="bold" />
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="591dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:text="OkDoggo Sign-up"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="168dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="590dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

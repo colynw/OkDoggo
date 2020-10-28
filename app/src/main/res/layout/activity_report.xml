@@ -1,26 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="50dp"
-    android:paddingTop="100dp"
-    android:paddingRight="50dp"
     tools:context=".ReportActivity">
 
+
+    <ImageView
+        android:id="@+id/window_report"
+        android:layout_width="395dp"
+        android:layout_height="409dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginBottom="187dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/window" />
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#c0efd8"
+        android:id="@+id/banner_report"
+        android:layout_width="387dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginBottom="625dp"
+        android:background="#282828"
         android:gravity="center"
+        android:text="REPORT"
         android:textColor="@android:color/white"
         android:textSize="36sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="411dp"
         tools:text="REPORT" />
 
+    <RadioGroup
+        android:layout_width="177dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="419dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joke profile"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="312dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="48dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spam"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="312dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="80dp" />
+
+        <RadioButton
+            android:id="@+id/rb_abuse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animal abuse"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="312dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="144dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="312dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="112dp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="288dp"
+        android:layout_height="159dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="241dp"
+        android:background="#F0F0F0"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="max 100 characters"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="163dp"
+        tools:layout_conversion_absoluteWidth="339dp" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="331dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="554dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="112dp"
+        android:text="SUBMIT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="411dp" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="58dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="334dp"
+        android:layout_marginBottom="620dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,47 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FED8B1"
     android:orientation="vertical"
     tools:context=".WelcomeActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="464dp"
+        android:layout_height="261dp"
+        app:srcCompat="@drawable/background_adopter" />
 
+    <!--Adds space-->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="20dp"/>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adopter Options"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <!--Adds space-->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="40dp"/>
+
+    <ImageView
+        android:id="@+id/ViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/button_view_profiles" />
+
+    <ImageView
+        android:id="@+id/Favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/button_view_favorited" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="300dp"
         android:padding="20dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_profile_pic"
-            android:layout_width="280dp"
-            android:layout_height="280dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="41dp"
-            android:layout_marginEnd="47dp"
-            android:src="@drawable/logo" />
+            android:layout_width="214dp"
+            android:layout_height="189dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
-
-
-    <Button
-        android:id="@+id/ViewProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#c0efd8"
-        android:text="View Pet Profiles"
-        android:textColor="@android:color/black" />
-
-    <Button
-        android:id="@+id/Favorite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#c0efd8"
-        android:text="View Favorite Pets"
-        android:textColor="@android:color/black"/>
-
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

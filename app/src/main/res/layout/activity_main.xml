@@ -5,6 +5,7 @@
     android:id="@+id/coordinatorLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -33,6 +34,18 @@
 
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/outline_tab_window"
+        android:layout_width="450dp"
+        android:layout_height="376dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="39dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabs"
+        app:srcCompat="@drawable/window_tab_outline" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
@@ -173,7 +186,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_breed"
         android:layout_width="wrap_content"
@@ -182,7 +196,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_sex"
         android:layout_width="wrap_content"
@@ -191,7 +206,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_age"
         android:layout_width="wrap_content"
@@ -200,7 +216,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_description"
         android:layout_width="wrap_content"
@@ -209,7 +226,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_personality_traits"
         android:layout_width="wrap_content"
@@ -218,7 +236,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_history_medical"
         android:layout_width="wrap_content"
@@ -227,7 +246,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_history_behavior"
         android:layout_width="wrap_content"
@@ -236,7 +256,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_history_home"
         android:layout_width="wrap_content"
@@ -245,7 +266,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/placeholder_change"
         android:layout_width="wrap_content"
@@ -254,7 +276,8 @@
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
