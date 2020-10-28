@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     DocumentReference DR = db.collection("Dog").document(Database);
 
     // Miscellaneous
-    ImageView Settings, Report;
+    ImageView Settings, Report, Pass, Save;
     ViewPager tabWindow;
     TabLayout tabBar;
     TextView pName, pBreed, pSex, pAge, pDescription, pPersonality,
@@ -109,12 +109,16 @@ public class MainActivity extends AppCompatActivity {
                 if (!showTabs) {
                     tabWindow.setVisibility(View.VISIBLE);
                     tabBar.setVisibility(View.VISIBLE);
+                    Pass.setVisibility(View.INVISIBLE);
+                    Save.setVisibility(View.INVISIBLE);
                     toggleTabs.setText("View less");
                     showTabs = true;
                 } else
                 {
                     tabWindow.setVisibility(View.INVISIBLE);
                     tabBar.setVisibility(View.INVISIBLE);
+                    Pass.setVisibility(View.VISIBLE);
+                    Save.setVisibility(View.VISIBLE);
                     toggleTabs.setText("View more");
                     showTabs = false;
                 }
@@ -138,7 +142,38 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(activityChangeIntent);
             }
         });
+
+        Pass = findViewById(R.id.pass);
+        Pass.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onLeftSwipe();
+            }
+        });
+
+        Save = findViewById(R.id.save);
+        Save.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onRightSwipe();
+            }
+        });
     }
+    void onLeftSwipe(){
+        Intent i = new Intent(MainActivity.this, MainActivity.class);
+        startActivity(i);
+    }
+    void onRightSwipe(){
+        Map<String, Object> docData = new HashMap<>();
+        docData.put("Name", Name);
+        docData.put("Breed", Breed);
+        docData.put("Age", Age);
+        docData.put("Sex", Sex);
+        db.collection("USER").document(Database).set(docData);
+        Toast.makeText(MainActivity.this, "Pet added to favorites", Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(MainActivity.this, MainActivity.class);
+        startActivity(i);
+    }
+
     void pullPetInfo(){
         // This is honest to god the worst work around I've ever done for anything ever.
         // Shield your eyes and don't even think about trying to figure out how it works.
@@ -205,9 +240,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    //----------------------------------------------------------------------------------------------
-    // Swipe Left/Right Event
-    //----------------------------------------------------------------------------------------------
     public boolean onTouchEvent(MotionEvent event) {
         if (!showTabs){
             switch(event.getAction()){
@@ -218,26 +250,14 @@ public class MainActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_UP:
                     x2 = event.getX();
                     y2 = event.getY();
-                    if(x1 <  x2){  //swipe left pet is saved
-
-                        Map<String, Object> docData = new HashMap<>();
-                        docData.put("Name", Name);
-                        docData.put("Breed", Breed);
-                        docData.put("Age", Age);
-                        docData.put("Sex", Sex);
-                        db.collection("USER").document(Database).set(docData);
-                        Toast.makeText(MainActivity.this, "Pet added to favorites", Toast.LENGTH_SHORT).show();
-
-                        Intent i = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(i);
-                    } else if(x1 > x2){   //swipe right pet is not saved
-                        Intent i = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(i);
+                    if(x1 <  x2){
+                        onRightSwipe();
+                    } else if(x1 > x2){
+                        onLeftSwipe();
                     }
                     break;
             }//end switch
         }
-
         return false;
     }// end bool onTouchEvent
 

@@ -107,8 +107,8 @@
 
     <Button
         android:id="@+id/btn_toggle_tabs"
-        android:layout_width="190dp"
-        android:layout_height="48dp"
+        android:layout_width="232dp"
+        android:layout_height="47dp"
         android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/tabs"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,11 +117,12 @@
         app:layout_constraintTop_toBottomOf="@+id/img_profile_pic" />
     <!--Adds space-->
     <View
+        android:id="@+id/bottom"
         android:layout_width="221dp"
         android:layout_height="44dp"
         android:layout_marginStart="95dp"
         android:layout_marginLeft="95dp"
-        android:layout_marginTop="671dp"
+        android:layout_marginTop="600dp"
         android:layout_marginEnd="95dp"
         android:layout_marginRight="95dp"
         android:layout_marginBottom="16dp"
@@ -130,6 +131,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginEnd="268dp"
+        android:layout_marginRight="268dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pass" />
+
+    <ImageView
+        android:id="@+id/save"
+        android:layout_width="131dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="264dp"
+        android:layout_marginLeft="264dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/save" />
 
     <!-- Part of a stupid work around for getting data into fragments. Disregard all below. -->
     <TextView
