@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             pHistoryMedical,pHistoryBehavior,pHistoryHome,
             Change;
     String Name, Breed, Sex, Age, Description, Personality,
-            HistoryMedical, HistoryBehavior, HistoryHome;
+            HistoryMedical, HistoryBehavior, HistoryHome,USER;
     boolean showTabs = false;
     float x1,x2,y1,y2;
 
@@ -174,12 +174,13 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
     void onRightSwipe(){
+        USER = fAuth.getCurrentUser().getEmail().toString();
         Map<String, Object> docData = new HashMap<>();
         docData.put("Name", Name);
         docData.put("Breed", Breed);
         docData.put("Age", Age);
         docData.put("Sex", Sex);
-        db.collection("USER").document(Database).set(docData);
+        db.collection(USER).document(Database).set(docData);
         Toast.makeText(MainActivity.this, "Pet added to favorites", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(MainActivity.this, MainActivity.class);
