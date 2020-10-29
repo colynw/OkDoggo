@@ -50,7 +50,7 @@ public class FavoriteActivity extends AppCompatActivity {
 
 
 
-        for(i=1; i<10; i++) {
+        for(i=1; i<20; i++) {
             String count = String.valueOf(i);
             DocumentReference DR = db.collection(USER).document(count);
 

@@ -48,9 +48,9 @@ import javax.annotation.Nullable;
 public class MainActivity extends AppCompatActivity {
 
     // Locally stored images, randomly selected for now.
-    int[] images = {R.drawable.dog1,R.drawable.bella1,R.drawable.weds,R.drawable.molly,R.drawable.april,R.drawable.cheeto};
+    int[] images = {R.drawable.dog1,R.drawable.bella1,R.drawable.weds,R.drawable.molly,R.drawable.april,R.drawable.cheeto,R.drawable.ger,R.drawable.chakra,R.drawable.san,R.drawable.lor,R.drawable.vive,R.drawable.neb,R.drawable.snow,R.drawable.bell,R.drawable.jul};
     Random rand = new Random();
-    int score = rand.nextInt((6-1)+1)+1;   // gets a random number
+    int score = rand.nextInt((15-1)+1)+1;   // gets a random number
     String Database = String.valueOf(score);
 
     // Firebase
