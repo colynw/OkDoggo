@@ -50,14 +50,10 @@ public class ProfileTab3 extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         LatLng LAS;
-        if (getArguments() != null) { // Get location pulled from database
+        // Get location pulled from database
             mParam1 = getArguments().getDouble(ARG_PARAM1);
             mParam2 = getArguments().getDouble(ARG_PARAM2);
             LAS = new LatLng(mParam1, mParam2);
-
-        } else { // Default location when nothing is entered in database
-            LAS = new LatLng(33.533480, -101.799900);
-        }
         //mMap.addMarker(new MarkerOptions().position(LAS).title("Lubbock Animal Shelter"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LAS, 15));
     }

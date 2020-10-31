@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     TextView Change;
     String Name, Breed, Sex, Age, Description, Personality,
             HistoryMedical, HistoryBehavior, HistoryHome, USER;
-    Double Latitude, Longitude;
+    Double Latitude = 0.0 , Longitude = 0.0;
     boolean showTabs = false;
     float x1,x2,y1,y2;
 
