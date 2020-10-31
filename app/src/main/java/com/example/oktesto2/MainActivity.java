@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     TextView Change;
     String Name, Breed, Sex, Age, Description, Personality,
             HistoryMedical, HistoryBehavior, HistoryHome, USER;
-    Double Latitude = 0.0 , Longitude = 0.0;
+    Double Latitude = 33.533480, Longitude = -101.799900;
     boolean showTabs = false;
     float x1,x2,y1,y2;
 
@@ -218,8 +218,8 @@ public class MainActivity extends AppCompatActivity {
                 HistoryMedical = value.getString("Medical");
                 HistoryBehavior = value.getString("Behavior");
                 HistoryHome = value.getString("Home");
-                Latitude = value.getDouble("Lat");
-                Longitude = value.getDouble("Long");
+                //Latitude = value.getDouble("Lat");
+                //Longitude = value.getDouble("Long");
 
                 Change.setText("Changed");
             }
