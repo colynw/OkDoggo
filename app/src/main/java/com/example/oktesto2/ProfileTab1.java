@@ -20,8 +20,6 @@ import java.util.Random;
 
 
 public class ProfileTab1 extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "name";
     private static final String ARG_PARAM2 = "breed";
     private static final String ARG_PARAM3 = "sex";
@@ -30,7 +28,6 @@ public class ProfileTab1 extends Fragment {
 
     TextView Name, Breed, Sex, Age, Description;
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private String mParam3;
@@ -40,8 +37,6 @@ public class ProfileTab1 extends Fragment {
     public ProfileTab1() {
         // Required empty public constructor
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

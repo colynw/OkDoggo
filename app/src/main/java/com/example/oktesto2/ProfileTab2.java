@@ -8,12 +8,6 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link com.example.oktesto2.ProfileTab2#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProfileTab2 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,24 +26,9 @@ public class ProfileTab2 extends Fragment {
         // Required empty public constructor
     }
 
-
-    public static com.example.oktesto2.ProfileTab2 newInstance(String param1, String param2, String param3) {
-        com.example.oktesto2.ProfileTab2 fragment = new com.example.oktesto2.ProfileTab2();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        args.putString(ARG_PARAM3, param3);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
     }
 
     @Override

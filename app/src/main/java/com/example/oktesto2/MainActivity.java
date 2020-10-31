@@ -64,11 +64,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView tabWindowOutline;
     ViewPager tabWindow;
     TabLayout tabBar;
-    TextView pName, pBreed, pSex, pAge, pDescription, pPersonality,
-            pHistoryMedical,pHistoryBehavior,pHistoryHome,
-            Change;
+    TextView Change;
     String Name, Breed, Sex, Age, Description, Personality,
-            HistoryMedical, HistoryBehavior, HistoryHome,USER;
+            HistoryMedical, HistoryBehavior, HistoryHome, USER;
+    Double Latitude, Longitude;
     boolean showTabs = false;
     float x1,x2,y1,y2;
 
@@ -77,26 +76,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initializePlaceholders();
+        Change = findViewById(R.id.placeholder_change);
+        constraintLayout = findViewById(R.id.coordinatorLayout6);
         setProfileImage();
         pullPetInfo();
         enableTabView();
         enableButtons();
     }// end void onCreate
 
-    void initializePlaceholders(){
-        pName = findViewById(R.id.placeholder_name);
-        pBreed = findViewById(R.id.placeholder_breed);
-        pSex = findViewById(R.id.placeholder_sex);
-        pAge = findViewById(R.id.placeholder_age);
-        pDescription = findViewById(R.id.placeholder_description);
-        pPersonality = findViewById(R.id.placeholder_personality_traits);
-        pHistoryMedical = findViewById(R.id.placeholder_history_medical);
-        pHistoryBehavior = findViewById(R.id.placeholder_history_behavior);
-        pHistoryHome = findViewById(R.id.placeholder_history_home);
-        Change = findViewById(R.id.placeholder_change);
-        constraintLayout = findViewById(R.id.coordinatorLayout6);
-    }
     void setProfileImage(){
         ImageView mImageView;
         mImageView = findViewById(R.id.img_profile_pic);
@@ -187,80 +174,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
-
-    void pullPetInfo(){
-        // This is honest to god the worst work around I've ever done for anything ever.
-        // Shield your eyes and don't even think about trying to figure out how it works.
-        fAuth = FirebaseAuth.getInstance();
-        DR.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                //pulling this info from the database
-                pName.setText(value.getString("Name"));
-                pBreed.setText(value.getString("Breed"));
-                pSex.setText(value.getString("Sex"));
-                pAge.setText(value.getString("Age"));
-                pDescription.setText(value.getString("Description"));
-                pPersonality.setText(value.getString("Personality"));
-                pHistoryMedical.setText(value.getString("Medical"));
-                pHistoryBehavior.setText(value.getString("Behavior"));
-                pHistoryHome.setText(value.getString("Home"));
-                Change.setText("Changed");
-            }
-        });//end DR addSnapshotListener
-
-        // Don't ask. It takes serious skill to come up with this bad of a work around.
-        Change.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {}
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() != 0) {
-                    Name = pName.getText().toString();
-                    Breed = pBreed.getText().toString();
-                    Sex = pSex.getText().toString();
-                    Age = pAge.getText().toString();
-                    Description = pDescription.getText().toString();
-                    Personality = pPersonality.getText().toString();
-                    HistoryMedical = pHistoryMedical.getText().toString();
-                    HistoryBehavior = pHistoryBehavior.getText().toString();
-                    HistoryHome = pHistoryHome.getText().toString();
-
-                    // Everything bundled here goes into the General Tab
-                    Bundle pet_general = new Bundle();
-                    pet_general.putString("name", Name); //Name
-                    pet_general.putString("breed", Breed);
-                    pet_general.putString("sex", Sex);
-                    pet_general.putString("age", Age);
-                    pet_general.putString("description", Description);
-                    //Todo: Add personality
-
-                    // Everything bundled here goes into the Notes Tab
-                    Bundle pet_notes = new Bundle();
-                    pet_notes.putString("history_medical", HistoryMedical); //HistoryMedical
-                    pet_notes.putString("history_behavior", HistoryBehavior);
-                    pet_notes.putString("history_home", HistoryHome);
-
-                    SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(MainActivity.this, getSupportFragmentManager(), pet_general, pet_notes);
-                    ViewPager viewPager = findViewById(R.id.view_pager);
-                    viewPager.setAdapter(sectionsPagerAdapter);
-                    TabLayout tabs = findViewById(R.id.tabs);
-                    tabs.setupWithViewPager(viewPager);
-
-                    if (Sex.equalsIgnoreCase("Female")){
-                        constraintLayout.setBackgroundResource(R.drawable.background_profile_female);
-                    }
-                    else{
-                    constraintLayout.setBackgroundResource(R.drawable.background_profile_male);
-                    }
-                }
-            }
-        });
-
-    }
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (!showTabs){
@@ -282,5 +195,76 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }// end bool onTouchEvent
+    void setBackground(){
+        if (Sex.equalsIgnoreCase("Female")){
+            constraintLayout.setBackgroundResource(R.drawable.background_profile_female);
+        }
+        else{
+            constraintLayout.setBackgroundResource(R.drawable.background_profile_male);
+        }
+    }
+    void pullPetInfo(){
+        fAuth = FirebaseAuth.getInstance();
+        DR.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                //pulling this info from the database
+                Name = value.getString("Name");
+                Breed = value.getString("Breed");
+                Sex = value.getString("Sex");
+                Age = value.getString("Age");
+                Description = value.getString("Description");
+                Personality = value.getString("Personality");
+                HistoryMedical = value.getString("Medical");
+                HistoryBehavior = value.getString("Behavior");
+                HistoryHome = value.getString("Home");
+                Latitude = value.getDouble("Lat");
+                Longitude = value.getDouble("Long");
 
+                Change.setText("Changed");
+            }
+        });//end DR addSnapshotListener
+
+        // Don't ask. It takes serious skill to come up with this bad of a work around.
+        Change.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {}
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length() != 0) {
+                    setBackground(); // Red for female, blue for male.
+
+                    // Everything bundled here goes into the General Tab
+                    Bundle pet_general = new Bundle();
+                    pet_general.putString("name", Name);
+                    pet_general.putString("breed", Breed);
+                    pet_general.putString("sex", Sex);
+                    pet_general.putString("age", Age);
+                    pet_general.putString("description", Description);
+                    //Todo: Add personality
+
+                    // Everything bundled here goes into the Notes Tab
+                    Bundle pet_notes = new Bundle();
+                    pet_notes.putString("history_medical", HistoryMedical);
+                    pet_notes.putString("history_behavior", HistoryBehavior);
+                    pet_notes.putString("history_home", HistoryHome);
+
+                    // Everything bundled here goes into the Map Tab
+                    Bundle pet_map = new Bundle();
+                    pet_map.putDouble("lat", Latitude);
+                    pet_map.putDouble("long", Longitude);
+
+                    SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(MainActivity.this,
+                            getSupportFragmentManager(), pet_general, pet_notes, pet_map);
+                    ViewPager viewPager = findViewById(R.id.view_pager);
+                    viewPager.setAdapter(sectionsPagerAdapter);
+                    TabLayout tabs = findViewById(R.id.tabs);
+                    tabs.setupWithViewPager(viewPager);
+
+                }
+            }
+        });
+    }//end pullPetInfo
 }//end MainActivity

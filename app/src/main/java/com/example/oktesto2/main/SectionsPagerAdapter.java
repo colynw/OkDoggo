@@ -25,12 +25,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private final Context mContext;
     Bundle pet_general;
     Bundle pet_notes;
+    Bundle pet_map;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm, Bundle general, Bundle notes) {
+    public SectionsPagerAdapter(Context context, FragmentManager fm, Bundle general, Bundle notes, Bundle map) {
         super(fm);
         mContext = context;
         pet_general = general;
         pet_notes = notes;
+        pet_map = map;
     }
 
     @Override
@@ -48,6 +50,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 break;
             case 2:
                 fragment = new ProfileTab3();
+                fragment.setArguments(pet_map);
                 break;
         }
         return fragment;
