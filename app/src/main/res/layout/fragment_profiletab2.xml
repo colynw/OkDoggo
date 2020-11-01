@@ -28,7 +28,7 @@
                 android:id="@+id/field_history_medical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Medical History Field"
+                android:text="N/A"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -50,7 +50,7 @@
                 android:id="@+id/field_history_behavior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Behavioral History Field"
+                android:text="N/A"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -72,7 +72,7 @@
                 android:id="@+id/field_history_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Home History Field"
+                android:text="N/A"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 

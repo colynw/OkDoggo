@@ -119,17 +119,31 @@
         app:layout_constraintTop_toBottomOf="@+id/settings"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!--Adds space-->
     <Button
-        android:id="@+id/btn_toggle_tabs"
+        android:id="@+id/btn_toggle_tabs2"
         android:layout_width="232dp"
         android:layout_height="47dp"
         android:text="Button"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/tabs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_profile_pic" />
-    <!--Adds space-->
+    <Button
+        android:id="@+id/btn_toggle_tabs"
+        android:layout_width="232dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginBottom="375dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/bottom"
         android:layout_width="221dp"
@@ -186,6 +200,21 @@
         android:text="TextView"
         android:textColor="#00FFFFFF"
         android:textSize="1sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="242dp"
+        android:layout_marginBottom="449dp"
+        android:text=" "
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

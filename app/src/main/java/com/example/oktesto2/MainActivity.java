@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView tabWindowOutline;
     ViewPager tabWindow;
     TabLayout tabBar;
-    TextView Change;
+    TextView ProfileName, Change;
     String Name, Breed, Sex, Age, Description, Personality,
             HistoryMedical, HistoryBehavior, HistoryHome, USER;
     Double Latitude = 33.533480, Longitude = -101.799900;
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ProfileName = findViewById(R.id.profile_name);
         Change = findViewById(R.id.placeholder_change);
         constraintLayout = findViewById(R.id.coordinatorLayout6);
         setProfileImage();
@@ -92,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
     }
     void enableTabView(){
         final Button toggleTabs = findViewById(R.id.btn_toggle_tabs);
+        final Button toggleTabs2 = findViewById(R.id.btn_toggle_tabs2);
         toggleTabs.setText("View more");
+        toggleTabs2.setText("View less");
         tabWindow = findViewById(R.id.view_pager);
         tabBar = findViewById(R.id.tabs);
         tabWindowOutline = findViewById(R.id.outline_tab_window);
@@ -106,20 +109,31 @@ public class MainActivity extends AppCompatActivity {
                     tabWindowOutline.setVisibility(View.VISIBLE);
                     Pass.setVisibility(View.INVISIBLE);
                     Save.setVisibility(View.INVISIBLE);
-                    toggleTabs.setText("View less");
+                    ProfileName.setVisibility(View.INVISIBLE);
+                    toggleTabs.setVisibility(View.INVISIBLE);
+                    toggleTabs2.setVisibility(View.VISIBLE);
+                    //toggleTabs.setText("View less");
                     showTabs = true;
-                } else
-                {
+                }
+            }
+        });
+        toggleTabs2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (showTabs) {
                     tabWindow.setVisibility(View.INVISIBLE);
                     tabBar.setVisibility(View.INVISIBLE);
                     tabWindowOutline.setVisibility(View.INVISIBLE);
                     Pass.setVisibility(View.VISIBLE);
                     Save.setVisibility(View.VISIBLE);
-                    toggleTabs.setText("View more");
+                    ProfileName.setVisibility(View.VISIBLE);
+                    toggleTabs.setVisibility(View.VISIBLE);
+                    toggleTabs2.setVisibility(View.INVISIBLE);
                     showTabs = false;
                 }
             }
         });
+
 
     }
     void enableButtons(){
@@ -209,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 //pulling this info from the database
+                ProfileName.setText(value.getString("Name"));
                 Name = value.getString("Name");
                 Breed = value.getString("Breed");
                 Sex = value.getString("Sex");
