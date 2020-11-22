@@ -34,14 +34,14 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });//end Saved OnClickListener
 
-//        Search = findViewById(R.id.btn_view_search_criteria);
-//        Search.setOnClickListener(new View.OnClickListener() {
-//            @Override
+//       Search = findViewById(R.id.btn_view_search_criteria);
+//       Search.setOnClickListener(new View.OnClickListener() {
+//           @Override
 //            public void onClick(View v) {
 //                FirebaseAuth.getInstance().signOut();
-//                startActivity(new Intent(getApplicationContext(),SearchCriteriaActivity.class));
-//                finish();
-//
+//               startActivity(new Intent(getApplicationContext(),SearchCriteriaActivity.class));
+//               finish();
+
 //            }
 //        });//end Search OnClickListener
 //
