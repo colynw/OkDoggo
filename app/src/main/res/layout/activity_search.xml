@@ -7,11 +7,11 @@
 
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ReportActivity">
+    tools:context=".SearchCriteriaActivity">
 
 
     <ImageView
-        android:id="@+id/window_report"
+        android:id="@+id/window_search"
         android:layout_width="395dp"
         android:layout_height="409dp"
         android:layout_marginTop="135dp"

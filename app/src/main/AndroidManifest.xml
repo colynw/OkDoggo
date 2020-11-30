@@ -45,6 +45,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ReportActivity" />
+        <activity android:name=".SearchCriteriaActivity" />
+
     </application>
 
 </manifest>

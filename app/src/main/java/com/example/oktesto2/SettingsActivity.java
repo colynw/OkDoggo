@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsActivity extends AppCompatActivity {
-    Button Logout, Saved;
+    Button Logout, Saved, Search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,16 +34,15 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });//end Saved OnClickListener
 
-//       Search = findViewById(R.id.btn_view_search_criteria);
-//       Search.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//            public void onClick(View v) {
-//                FirebaseAuth.getInstance().signOut();
-//               startActivity(new Intent(getApplicationContext(),SearchCriteriaActivity.class));
-//               finish();
+       Search = findViewById(R.id.btn_view_search_criteria);
+       Search.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View v) {
+               startActivity(new Intent(getApplicationContext(),SearchCriteriaActivity.class));
+                finish();
 
-//            }
-//        });//end Search OnClickListener
+            }
+        });//end Search OnClickListener
 //
 //        EditInfo = findViewById(R.id.btn_view_user_info);
 //        EditInfo.setOnClickListener(new View.OnClickListener() {

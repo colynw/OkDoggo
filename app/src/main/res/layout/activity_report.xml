@@ -29,7 +29,7 @@
         android:layout_height="57dp"
         android:layout_marginTop="49dp"
         android:layout_marginBottom="625dp"
-        android:background="#282828"
+        android:background="#c0efd8"
         android:gravity="center"
         android:text="REPORT"
         android:textColor="@android:color/white"
