@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="50dp"
+    android:paddingTop="100dp"
+    android:paddingRight="50dp"
+    tools:context=".AdopterSettingsActivity">
+
+
+    <!--Adds space-->
+
+    <TextView
+        android:id="@+id/banner_settings_lister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0efd8"
+        android:gravity="center"
+        android:text="SETTINGS"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        tools:text="SETTINGS" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="20dp"/>
+
+    <TableRow
+        android:id="@+id/tableRow3_lister"
+        android:layout_width="313dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/lbl_user_info_lister"
+            android:layout_width="135dp"
+            android:layout_height="22dp"
+            android:text="Edit User Info"
+            android:textSize="18sp" />
+
+        <!--Adds space-->
+        <View
+            android:layout_width="100dp"
+            android:layout_height="20dp"/>
+
+        <Button
+            android:id="@+id/btn_view_user_info_lister"
+            android:layout_width="59dp"
+            android:layout_height="match_parent"
+            android:text="View"
+            android:textSize="10sp" />
+    </TableRow>
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="20dp"/>
+
+    <!--Adds space-->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="10dp"/>
+
+    <!--Adds space-->
+
+    <TableRow
+        android:id="@+id/tableRow4_lister"
+        android:layout_width="322dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/lbl_user_type_lister"
+            android:layout_width="156dp"
+            android:layout_height="match_parent"
+            android:text="Change User Type"
+            android:textSize="18sp" />
+
+        <!--Adds space-->
+
+        <Spinner
+            android:id="@+id/spinner_user_type_lister"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp" />
+    </TableRow>
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="68dp" />
+
+    <Button
+        android:id="@+id/btn_logout_lister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOG OUT" />
+
+</LinearLayout>

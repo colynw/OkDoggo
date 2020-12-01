@@ -1,24 +1,16 @@
 package com.example.oktesto2;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,9 +19,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLoginBtn ,mSignup;
     FirebaseAuth fAuth;
-
-//test
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +52,13 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-
-
                 // authenticate the user
-
                 fAuth.signInWithEmailAndPassword(email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {  //uses the firebase to login the users
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent _Login = new Intent(LoginActivity.this,WelcomeActivity.class);
+                            Intent _Login = new Intent(LoginActivity.this, AdopterOptionsActivity.class);
                             startActivity(_Login);
                         }else {
                             Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -85,33 +71,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
-
-
-
         mSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //takes them to the signup page
-                Intent _Signup = new Intent(LoginActivity.this,UserTypeActivity.class);
+                Intent _Signup = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(_Signup);
             }
         });
-
-
-
-
-
-
-
-
-
-
     }
 }

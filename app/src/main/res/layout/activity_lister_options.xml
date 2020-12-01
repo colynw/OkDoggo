@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdopterOptionsActivity">
+
+    <ImageView
+        android:id="@+id/lister_settings"
+        android:layout_width="64dp"
+        android:layout_height="55dp"
+        app:srcCompat="@drawable/settings" />
+
+    <ImageView
+        android:id="@+id/img_top_lister"
+        android:layout_width="match_parent"
+        android:layout_height="127dp"
+        app:srcCompat="@drawable/background_lister" />
+
+    <!--Adds space-->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:id="@+id/lbl_lister_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lister Options"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <!--Adds space-->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="40dp"/>
+
+    <ImageView
+        android:id="@+id/btn_new_listing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/button_new_listing" />
+
+    <ImageView
+        android:id="@+id/btn_view_listed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/button_view_listed" />
+
+    <ImageView
+        android:id="@+id/btn_view_meetup_requests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/button_view_meetup_requests" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="210dp"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_profile_pic"
+            android:layout_width="178dp"
+            android:layout_height="152dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</LinearLayout>
