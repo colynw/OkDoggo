@@ -35,6 +35,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         docData.put("Breed", Breed);
         docData.put("Age", Age);
         docData.put("Sex", Sex);
-        db.collection(USER).document(Database).set(docData);
+        db.collection(USER).document(Database).set(docData, SetOptions.merge());
         Toast.makeText(MainActivity.this, "Pet added to favorites", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(MainActivity.this, MainActivity.class);
