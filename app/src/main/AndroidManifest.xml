@@ -18,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <activity android:name=".AdopterQuestionnaireActivity"></activity>
+        <activity android:name=".ListerQuestionnaireActivity"></activity>
+        <activity android:name=".NewPetProfileActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,9 +33,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCcrr7fUvzXxcUx-qz2_OwAe6JShoT7k80" />
 
-        <activity android:name=".UserTypeActivity"/>
+        <activity android:name=".UserTypeActivity" />
         <activity android:name=".FavoriteActivity" />
-        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".AdopterOptionsActivity" />
+        <activity android:name=".ListerOptionsActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +46,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".SettingsActivity" />
+        <activity android:name=".AdopterSettingsActivity" />
+        <activity android:name=".ListerSettingsActivity" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".SearchCriteriaActivity" />
 

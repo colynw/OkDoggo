@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewPetProfileActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="120dp">
+
+                <ImageView
+                    android:id="@+id/back_create_listing"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/back" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="332dp"
+                    android:layout_height="62dp"
+                    android:text="Create New Listing"
+                    android:textSize="36sp" />
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/UploadPic"
+                android:layout_width="match_parent"
+                android:layout_height="173dp"
+                android:src="@drawable/button_pic_upload"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="137dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:id="@+id/lbl_name_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="50dp"
+                android:text="Name"
+                android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/field_name_c"
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F0F0F0"
+                    android:hint="enter pet name"
+                    android:textColor="#000000"
+                    android:textSize="30sp" />
+
+        </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="137dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:id="@+id/lbl_breed_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="50dp"
+                android:text="Breed"
+                android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/field_breed_c"
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F0F0F0"
+                    android:hint="enter pet breed"
+                    android:textSize="30sp" />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="120dp">
+
+                <TextView
+                    android:id="@+id/lbl_sex_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="50dp"
+                    android:text="Sex"
+                    android:textSize="30sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_sex"
+                    android:layout_width="239dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_age_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="50dp"
+                android:text="Age"
+                android:textSize="30sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner_months"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="183dp"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="10dp" />
+                <TextView
+                    android:id="@+id/lbl_months"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="50dp"
+                    android:text="months"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner_years"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="183dp"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="10dp" />
+                <TextView
+                    android:id="@+id/lbl_years"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="50dp"
+                    android:text="years"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:paddingTop="20dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="137dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:id="@+id/lbl_size_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="50dp"
+                android:text="Size"
+                android:textSize="30sp" />
+
+            <Spinner
+                android:id="@+id/spinner_size"
+                android:layout_width="230dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="10dp" />
+
+        </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/lbl_description_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="50dp"
+                    android:text="Description"
+                    android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/field_description_c"
+                android:layout_width="360dp"
+                android:layout_height="218dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="40dp"
+                android:hint="enter a description of the pet"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/lbl_history_medical_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="50dp"
+                    android:text="Medical History"
+                    android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/field_history_medical_c"
+                android:layout_width="360dp"
+                android:layout_height="218dp"
+                android:hint="enter any relevant medical history"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="40dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/lbl_history_behavior_c"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="50dp"
+                    android:text="Behavior History"
+                    android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/field_history_behavior_c"
+                android:layout_width="360dp"
+                android:layout_height="218dp"
+                android:hint="enter a brief description of the pet's temperament"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
+
+                <TextView
+                    android:id="@+id/lbl_history_home_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="50dp"
+                    android:text="Home History"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/field_history_home_c"
+                    android:layout_width="360dp"
+                    android:layout_height="218dp"
+                    android:hint="enter a brief description of the pet's homing history if any"
+                    android:layout_marginStart="30dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
+
+            <Button
+                android:id="@+id/submit_new_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
