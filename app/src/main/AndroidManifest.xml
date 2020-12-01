@@ -49,6 +49,8 @@
         <activity android:name=".AdopterSettingsActivity" />
         <activity android:name=".ListerSettingsActivity" />
         <activity android:name=".ReportActivity" />
+        <activity android:name=".SearchCriteriaActivity" />
+
     </application>
 
 </manifest>

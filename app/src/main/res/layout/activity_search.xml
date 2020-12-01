@@ -7,11 +7,11 @@
 
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ReportActivity">
+    tools:context=".SearchCriteriaActivity">
 
 
     <ImageView
-        android:id="@+id/window_report"
+        android:id="@+id/window_search"
         android:layout_width="395dp"
         android:layout_height="409dp"
         android:layout_marginTop="135dp"
@@ -24,14 +24,14 @@
         app:srcCompat="@drawable/window" />
 
     <TextView
-        android:id="@+id/banner_report"
+        android:id="@+id/banner_search"
         android:layout_width="387dp"
         android:layout_height="57dp"
         android:layout_marginTop="49dp"
         android:layout_marginBottom="625dp"
         android:background="#c0efd8"
         android:gravity="center"
-        android:text="REPORT"
+        android:text="Search Criteria"
         android:textColor="@android:color/white"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -42,13 +42,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_conversion_absoluteHeight="48dp"
         tools:layout_conversion_absoluteWidth="411dp"
-        tools:text="REPORT" />
+        tools:text="Search Criteria" />
 
     <RadioGroup
-        android:layout_width="177dp"
-        android:layout_height="128dp"
+        android:layout_width="190dp"
+        android:layout_height="247dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="284dp"
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="419dp"
         android:orientation="vertical"
@@ -57,76 +57,87 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
+        <CheckBox
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Joke profile"
+            android:text="Male"
             tools:layout_conversion_absoluteHeight="32dp"
             tools:layout_conversion_absoluteWidth="312dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="48dp" />
 
-        <RadioButton
+        <CheckBox
             android:id="@+id/radioButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Spam"
+            android:text="Female"
             tools:layout_conversion_absoluteHeight="32dp"
             tools:layout_conversion_absoluteWidth="312dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="80dp" />
 
-        <RadioButton
-            android:id="@+id/rb_abuse"
+        <CheckBox
+            android:id="@+id/rb_neutered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Animal abuse"
+            android:text="Neutered/Spayed"
             tools:layout_conversion_absoluteHeight="32dp"
             tools:layout_conversion_absoluteWidth="312dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="144dp" />
 
-        <RadioButton
+        <CheckBox
             android:id="@+id/radioButton6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Other"
+            android:text="Age 0-6"
             tools:layout_conversion_absoluteHeight="32dp"
             tools:layout_conversion_absoluteWidth="312dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="112dp" />
+
+        <CheckBox
+            android:id="@+id/radioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age 7+"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="312dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="100dp" />
+        <CheckBox
+            android:id="@+id/radioButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Risk Breed"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="312dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="100dp" />
+        <CheckBox
+            android:id="@+id/radioButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Risk Breed"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="312dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="100dp" />
+
     </RadioGroup>
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="288dp"
-        android:layout_height="159dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="331dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="241dp"
-        android:background="#F0F0F0"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="max 100 characters"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_conversion_absoluteHeight="163dp"
-        tools:layout_conversion_absoluteWidth="339dp" />
+
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/filter"
         android:layout_width="331dp"
         android:layout_height="65dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="554dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="112dp"
-        android:text="SUBMIT"
+        android:text="Filter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

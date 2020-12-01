@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdopterSettingsActivity extends AppCompatActivity {
-    Button Logout, Saved;
+    Button Logout, Saved, Search;
     Spinner userSpinner;
     ArrayAdapter<CharSequence> adapter;
 
@@ -59,6 +59,16 @@ public class AdopterSettingsActivity extends AppCompatActivity {
 
             }
         });//end Saved OnClickListener
+
+        Search = findViewById(R.id.btn_view_search_criteria);
+        Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SearchCriteriaActivity.class));
+                finish();
+
+            }
+        });//end Search OnClickListener
 
     }//end void onCreate
 
