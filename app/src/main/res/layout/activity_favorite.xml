@@ -1,18 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavoriteActivity">
-
-    <ListView
-
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/listView"
-        android:layout_marginTop="151dp"
- />
-</RelativeLayout>
+        android:layout_height="300dp"
+        android:padding="20dp"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="391dp"
+            android:layout_height="280dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/paw2"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="YOUR FAVORITE PETS"
+            android:textAlignment="center"
+            android:textColor="#0B0707"
+            android:textSize="24sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pet Name">
+            <EditText
+                android:id="@+id/Dog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brad"
+                android:focusable="false"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Breed">
+            <EditText
+                android:id="@+id/Breed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mixed Breed"
+                android:focusable="false"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/Next_Pet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next Pet"
+            android:gravity="center"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Request Meet up"
+            android:gravity="center"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
