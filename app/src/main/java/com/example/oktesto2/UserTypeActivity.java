@@ -21,7 +21,7 @@ public class UserTypeActivity extends AppCompatActivity {
         Adopter = findViewById(R.id.btn_adopter);
         Adopter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activityChangeIntent = new Intent(UserTypeActivity.this, RegisterActivity.class);
+                Intent activityChangeIntent = new Intent(UserTypeActivity.this, AdopterQuestionnaireActivity.class);
                 startActivity(activityChangeIntent);
             }
         });
@@ -29,7 +29,7 @@ public class UserTypeActivity extends AppCompatActivity {
         Lister = findViewById(R.id.btn_lister);
         Lister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activityChangeIntent = new Intent(UserTypeActivity.this, RegisterActivity.class);
+                Intent activityChangeIntent = new Intent(UserTypeActivity.this, ListerQuestionnaireActivity.class);
                 startActivity(activityChangeIntent);
             }
         });

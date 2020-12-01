@@ -8,10 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import android.app.Activity;
 import android.content.Intent;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import android.text.Editable;
@@ -20,7 +18,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +26,6 @@ import android.widget.Toast;
 import com.example.oktesto2.main.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -42,7 +38,6 @@ import com.google.firebase.storage.UploadTask;
 import com.google.firestore.v1.WriteResult;
 
 
-import java.util.ResourceBundle;
 
 import javax.annotation.Nullable;
 
@@ -141,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         Settings = findViewById(R.id.settings);
         Settings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activityChangeIntent = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent activityChangeIntent = new Intent(MainActivity.this, AdopterSettingsActivity.class);
                 startActivity(activityChangeIntent);
                 finish();
             }
@@ -234,8 +229,8 @@ public class MainActivity extends AppCompatActivity {
                 HistoryMedical = value.getString("Medical");
                 HistoryBehavior = value.getString("Behavior");
                 HistoryHome = value.getString("Home");
-                //Latitude = value.getDouble("Lat");
-                //Longitude = value.getDouble("Long");
+                Latitude = value.getDouble("Lat");
+                Longitude = value.getDouble("Long");
 
                 Change.setText("Changed");
             }

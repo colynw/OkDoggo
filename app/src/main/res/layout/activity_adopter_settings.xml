@@ -8,8 +8,10 @@
     android:paddingLeft="50dp"
     android:paddingTop="100dp"
     android:paddingRight="50dp"
-    tools:context=".SettingsActivity">
+    tools:context=".AdopterSettingsActivity">
 
+
+    <!--Adds space-->
 
     <TextView
         android:id="@+id/banner_settings"
@@ -23,7 +25,6 @@
         android:textStyle="bold"
         tools:text="SETTINGS" />
 
-    <!--Adds space-->
     <View
         android:layout_width="100dp"
         android:layout_height="20dp"/>
@@ -39,7 +40,8 @@
             android:layout_width="135dp"
             android:layout_height="22dp"
             android:orientation="horizontal"
-            android:text="Saved Profiles" />
+            android:text="Saved Profiles"
+            android:textSize="18sp" />
 
         <!--Adds space-->
         <View
@@ -64,7 +66,8 @@
             android:id="@+id/lbl_search_criteria"
             android:layout_width="135dp"
             android:layout_height="22dp"
-            android:text="Edit Search Criteria" />
+            android:text="Edit Search Criteria"
+            android:textSize="18sp" />
 
             <!--Adds space-->
         <View
@@ -89,7 +92,8 @@
             android:id="@+id/lbl_user_info"
             android:layout_width="135dp"
             android:layout_height="22dp"
-            android:text="Edit User Info" />
+            android:text="Edit User Info"
+            android:textSize="18sp" />
 
         <!--Adds space-->
         <View
@@ -112,7 +116,8 @@
         android:id="@+id/lbl_search_distance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Search Distance" />
+        android:text="Search Distance"
+        android:textSize="18sp" />
 
     <!--Adds space-->
     <View
@@ -131,30 +136,29 @@
 
     <TableRow
         android:id="@+id/tableRow4"
-        android:layout_width="313dp"
+        android:layout_width="322dp"
         android:layout_height="37dp"
         android:layout_marginTop="15dp">
 
         <TextView
             android:id="@+id/lbl_user_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Change User Type" />
+            android:layout_width="156dp"
+            android:layout_height="match_parent"
+            android:text="Change User Type"
+            android:textSize="18sp" />
 
         <!--Adds space-->
-        <View
-            android:layout_width="100dp"
-            android:layout_height="20dp"/>
 
         <Spinner
-            android:id="@+id/spinner_user_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/spinner_user_type_adopter"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp" />
     </TableRow>
 
     <View
         android:layout_width="100dp"
-        android:layout_height="40dp"/>
+        android:layout_height="68dp" />
 
     <Button
         android:id="@+id/btn_logout"

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdopterQuestionnaireActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="120dp">
+
+        <TextView
+            android:id="@+id/banner_questionnaire"
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:text="Just a few more questions"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/txt_qr1_adopter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:text="Are you at least 18 years old?"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingStart="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_qr_1_y"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rb_qr_1_n"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_qr2_adopter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:text="Do you have a driver's license?"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingStart="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_qr_2_y"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rb_qr_2_n"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_qr3_adopter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Have you ever been convicted of anything that has brought harm to an animal? (Animal abuse, neglect, abandonment, etc)"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingStart="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_qr_3_y"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rb_qr_3_n"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_qr4_adopter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Do you have sufficient time, space, and money to accommodate a pet?"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingStart="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_qr_4_y"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rb_qr_4_n"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_qr5_adopter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:text="Are you a first time pet owner?"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingStart="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_qr_5_y"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rb_qr_5_n"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_qr6_adopter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Have you looked into whether or not there are restrictions on pet ownership or ownership of certain breeds for the property/area that you live in?"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingStart="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_qr_6_y"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rb_qr_6_n"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_qr7_adopter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Do you agree to give any animals you may adopt proper attention, exercise, medical care and training if needed?"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingStart="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_qr_7_y"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rb_qr_7_n"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submit_adopter_questionnaire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+
+    </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

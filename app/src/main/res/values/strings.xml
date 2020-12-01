@@ -31,4 +31,42 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="PETS" />
     <string name="title_activity_maps">Map</string>
+
+    <string-array name="user_types_adopter">
+        <item>Adopter</item>
+        <item>Lister</item>
+    </string-array>
+
+    <string-array name="user_types_lister">
+        <item>Lister</item>
+        <item>Adopter</item>
+    </string-array>
+
+    <string-array name="pet_gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="pet_age_months">
+        <item>0-1</item>
+        <item>2-4</item>
+        <item>5-7</item>
+        <item>8-11</item>
+    </string-array>
+
+    <string-array name="pet_age_years">
+        <item>0</item>
+        <item>1-2</item>
+        <item>3-4</item>
+        <item>5-8</item>
+        <item>9-12</item>
+        <item>13+</item>
+    </string-array>
+
+    <string-array name="pet_size">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+
+    </string-array>
 </resources>

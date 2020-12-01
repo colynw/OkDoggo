@@ -5,17 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class AdopterOptionsActivity extends AppCompatActivity {
 
     ImageView viewpages, favorites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_adopter_options);
 
         viewpages = findViewById(R.id.ViewProfile);
         favorites = findViewById(R.id.Favorite);
@@ -23,7 +22,7 @@ public class WelcomeActivity extends AppCompatActivity {
         viewpages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent _Welcome = new Intent(WelcomeActivity.this,MainActivity.class);
+                Intent _Welcome = new Intent(AdopterOptionsActivity.this,MainActivity.class);
                 startActivity(_Welcome);
             }
         });
@@ -32,7 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
         favorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent _fav = new Intent(WelcomeActivity.this,FavoriteActivity.class);
+                Intent _fav = new Intent(AdopterOptionsActivity.this,FavoriteActivity.class);
                 startActivity(_fav);
             }
         });
